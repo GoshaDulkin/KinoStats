@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>KinoStats</h1>
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message[1] == "error" %}
+                        <div class="alert alert-danger mt-4">
+                            {{ message[0] }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <p>Analyze your Letterboxd stats based on lifetime film ratings.</p>
+    <p>Click <a href="https://letterboxd.com/settings/data/" target="_blank">here</a> to download your account data and upload the zip file to the form below.</p>
+    <form method="POST" enctype="multipart/form-data" class="mt-4">
+        <div class="form-group">
+            <input type="file" class="form-control-file" id="file" name="file" accept=".zip">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <p>This project was inspired by Letterboxd's Stats feature and made possible through TMDB's API.</p>
+    <div>
+        <img src="{{ url_for('static', filename='letterbox.svg') }}" alt="Letterboxd Logo" width="200px">
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename='tmdb.svg') }}" alt="TMDB Logo" width="300px">
+    </div>
+    
+    <br>
+</div>
+
+{% endblock %}

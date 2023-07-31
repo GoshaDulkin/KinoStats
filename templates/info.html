@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+    <h1>Your Film Statistics</h1>
+    <br>
+    <p><strong>{{movie_total}}</strong> FILMS &nbsp;&nbsp;&nbsp;&nbsp; <strong>{{total_runtime}}</strong> HOURS &nbsp;&nbsp;&nbsp;&nbsp; <strong>{{total_directors}}</strong> DIRECTORS &nbsp;&nbsp;&nbsp;&nbsp; <strong>{{total_languages}}</strong> LANGUAGES &nbsp;&nbsp;&nbsp;&nbsp; <strong>{{total_countries}}</strong> COUNTRIES</p>
+    <br>
+    <p>AVERAGE MOVIE RATING: <strong>{{average_rating}}</strong></p>
+    <br>
+    <div id="divider"></div>
+    <br>
+    <p class="section-header">FILMS BY YEAR</p>
+    <div>
+        {{movies_plot|safe}}
+    </div>
+    <br>
+    <p>BEST-RATED DECADE: <strong>{{best_decade}}'s</strong> WITH AN AVERAGE RATING OF <strong>{{best_decade_avg}}</strong></p>
+    <div id="divider"></div>
+    <br>
+    <p class="section-header">GENRES AND LANGUAGES</p>
+    <div class="graphs-container">
+        <div class="graph">{{genre_plot|safe}}</div>
+        <div class="graph">{{language_plot|safe}}</div>
+    </div>
+    <br>
+    <div id="divider"></div>
+    <br>
+    <p class="section-header">COUNTRIES</p>
+    <div class="map-div">
+        {{country_plot|safe}}
+    </div>
+    <div id="divider"></div>
+    <br>
+    <p class="section-header">TOP DIRECTORS</p>
+    <div class="director-container">
+        <img src="{{d1pic}}" alt="Director 1">
+        <p>{{director1}}</p>
+        <p><strong>{{director1count}}</strong></p>
+      </div>
+      
+      <div class="director-container">
+        <img src="{{d2pic}}" alt="Director 2">
+        <p>{{director2}}</p>
+        <p><strong>{{director2count}}</strong></p>
+      </div>
+      
+      <div class="director-container">
+        <img src="{{d3pic}}" alt="Director 3">
+        <p>{{director3}}</p>
+        <p><strong>{{director3count}}</strong></p>
+      </div>
+</div>
+    
+{% endblock %}

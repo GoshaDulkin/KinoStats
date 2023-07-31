@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px; /* Optional: Add some top margin to center content vertically */
+}
+
+.section-container {        
+    text-align: center;
+}
+
+.section-header {
+    color: #D742FF; /* Optional: Set the color for section headers */
+    font-size: 24px; /* Optional: Adjust the font size for section headers */
+    position: relative;
+    font-weight: bold;
+}
+
+#divider {
+    height: 2px;
+    width: 100%;
+    background: blue;
+    background: linear-gradient(90deg, hsl(0, 0%, 20%), hsl(0, 0%, 70%), hsl(0, 0%, 20%));
+  }
+
+.graphs-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.graph-container {
+    flex: 1;
+    width: 40%;
+}
+
+.map-div {
+    margin-top: 0
+}
+
+.director-container {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+  }
+
+.director-container img {
+margin-bottom: 5px;
+}
+
+
