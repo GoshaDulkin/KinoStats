@@ -19,17 +19,20 @@ def process_csv(reader, API_KEY):
             year = row[2] 
             rating = float(row[-1]) 
 
-            movie_total += 1
-            total_rating += rating
-
-            counts[year] = 1 + counts.get(year, 0)
-            year_ratings[year] = rating + year_ratings.get(year, 0)
-
             #API functions
             movie_id = search_movie(name, year, API_KEY)
+            if movie_id == None:
+                continue
             future_details = executor.submit(get_details, movie_id, API_KEY)
             future_director_details = executor.submit(get_director_details, movie_id, API_KEY)
             futures.append((future_details, future_director_details))
+
+            movie_total += 1
+            total_rating += rating
+            counts[year] = 1 + counts.get(year, 0)
+            year_ratings[year] = rating + year_ratings.get(year, 0)
+
+            
 
         for future_details, future_director_details in futures:
             details = future_details.result()

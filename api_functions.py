@@ -34,6 +34,7 @@ def search_movie(title, release_year, api_key):
 
     except requests.exceptions.RequestException as e:
         print('Error:', e)
+        return None
 
 def get_director_details(movie_id, api_key):
     # Set the query parameters for getting movie credits
