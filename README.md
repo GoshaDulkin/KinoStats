@@ -5,14 +5,18 @@ about your average rating, genres, languages, directors and more.
 
 If you would like to test KinoStats, but don't have your own own Letterboxd account, simply download the test.zip file and upload it directly. 
 
+## Find the web app here:
 https://kinostats.pythonanywhere.com/
 
-### Built With
+## Built With
 [![Flask][Flask.com]][Flask-url]
 [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 [![Plotly][Plotly.com]][Plotly-url]
 [![Jinja][Jinja.com]][Jinja-url]<br>
 
+- Implements multiprocessing. File processing and API calls are made concurrently using Python's ThreadPoolExecutor.
+
+## Demo Video
 [KinoStatsDemo](https://github.com/GoshaDulkin/KinoStats/assets/68118331/8aef53b4-1a7f-4f09-85b6-fbaa139c25f7)
 
 <br><br>
