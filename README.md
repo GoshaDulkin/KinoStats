@@ -3,7 +3,7 @@
 A tool to quickly analyze your Letterboxd stats based off lifetime movie ratings. Simply export your Letterboxd account and upload it to KinoStats to get info
 about your average rating, genres, languages, directors and more.
 
-If you would like to test KinoStats, but don't have your own own Letterboxd account, simply download the test.zip file and upload it directly. 
+If you would like to test KinoStats, but don't have your own own Letterboxd account, simply download the **test.zip** file and upload it directly. 
 
 ## Find the web app here:
 https://kinostats.pythonanywhere.com/
