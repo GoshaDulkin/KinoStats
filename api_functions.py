@@ -87,16 +87,22 @@ def get_details(movie_id, api_key):
         data = response.json()
 
         runtime = data['runtime']
-        language = data['spoken_languages'][0]['english_name']
+        language_code = data['original_language']
+        language = ''
+        for lang in data['spoken_languages']:
+            if lang['iso_639_1'] == language_code:
+                language = lang['english_name']
+                break
+        else:
+            language = data['spoken_languages'][0]['english_name']
         genres = []
         for genre in data['genres']:
             genres.append(genre['name'])
         countries = []
         for country in data['production_countries']:
             countries.append(country['name'])
-        poster = data['poster_path']
         
-        return runtime, language, genres, countries, poster
+        return runtime, language, genres, countries
 
     except requests.exceptions.RequestException as e:
         print('Error:', e)

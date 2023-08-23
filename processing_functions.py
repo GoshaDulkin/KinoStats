@@ -15,7 +15,7 @@ def process_csv(reader, API_KEY):
 
         # Iterating over ratings csv and extracting info
         for row in reader:
-            name = row[1]  
+            name = row[1] 
             year = row[2] 
             rating = float(row[-1]) 
 
@@ -32,13 +32,11 @@ def process_csv(reader, API_KEY):
             counts[year] = 1 + counts.get(year, 0)
             year_ratings[year] = rating + year_ratings.get(year, 0)
 
-            
-
         for future_details, future_director_details in futures:
             details = future_details.result()
             director_id, director = future_director_details.result()
             if details and director_id and director:
-                runtime, language, genres, countries, poster = details
+                runtime, language, genres, countries = details
 
                 total_runtime += runtime
 
