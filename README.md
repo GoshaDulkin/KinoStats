@@ -17,10 +17,11 @@ https://kinostats.pythonanywhere.com/
 - Implements multiprocessing. File processing and API calls are made concurrently using Python's ThreadPoolExecutor.
 
 ## Demo Video
-[KinoStatsDemo](https://github.com/GoshaDulkin/KinoStats/assets/68118331/8aef53b4-1a7f-4f09-85b6-fbaa139c25f7)
+[KinoStats_Demo.webm](https://github.com/GoshaDulkin/KinoStats/assets/68118331/6e428729-f22c-4dc5-848a-3f70046cf79c)
 
 <br><br>
 ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/GoshaDulkin/KinoStats)
+
 
 
 
