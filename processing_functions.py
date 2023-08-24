@@ -38,7 +38,7 @@ def process_csv(reader, API_KEY):
             if details and director_id and director:
                 runtime, language, genres, countries = details
 
-                total_runtime += runtime
+                total_runtime += runtime / 60
 
                 language_dist[language] = 1 + language_dist.get(language, 0)
 
@@ -49,6 +49,10 @@ def process_csv(reader, API_KEY):
                     country_dist[country] = 1 + country_dist.get(country, 0)
 
                 director_dist[director] = 1 + director_dist.get(director, 0)
+
+    # Rounding totla_runtime hours
+    total_runtime = round(total_runtime)
+    
     return counts, year_ratings, movie_total, total_rating, total_runtime, genre_dist, country_dist, director_dist, language_dist
 
 def decade_rating(year_ratings, counts):
